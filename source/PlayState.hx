@@ -8767,4 +8767,3 @@ enum CharacterFunnyEffect
 {
 	None; Dave; Bambi; Tristan; Exbungo; Recurser; Shaggy;
 }
--]
