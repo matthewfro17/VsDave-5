@@ -1051,6 +1051,92 @@ class Character extends FlxSprite
 				loadOffsetFile(curCharacter);
 				barColor = FlxColor.fromRGB(0, 94, 255);
 				playAnim('idle');
+			case 'shaggy':
+				frames = Paths.getSparrowAtlas('characters/shaggy', 'shared');
+				animation.addByPrefix('danceRight', 'shaggy_idle0', 30, false);
+				animation.addByPrefix('danceLeft', 'shaggy_idle2', 30, false);
+				animation.addByPrefix('singUP', 'shaggy_up', 30, false);
+				animation.addByPrefix('singLEFT', 'shaggy_right', 30, false);
+				animation.addByPrefix('singRIGHT', 'shaggy_left', 30, false);
+				animation.addByPrefix('singDOWN', 'shaggy_down', 30, false);
+
+				barColor = FlxColor.fromRGB(51, 114, 74);
+
+				loadOffsetFile(curCharacter);
+				globalOffset = [0, -350];
+
+				playAnim('danceRight');
+
+				nativelyPlayable = true;
+			case 'supershaggy':
+				frames = Paths.getSparrowAtlas('characters/shaggy_super', 'shared');
+				animation.addByPrefix('idle', 'shaggy_sidle', 12, true);
+				animation.addByPrefix('singUP', 'shaggy_sup', 30, false);
+				animation.addByPrefix('singLEFT', 'shaggy_sright', 30, false);
+				animation.addByPrefix('singRIGHT', 'shaggy_sleft', 30, false);
+				animation.addByPrefix('singDOWN', 'shaggy_sdown', 30, false);
+
+				barColor = FlxColor.fromRGB(51, 114, 74);
+
+				loadOffsetFile(curCharacter);
+				globalOffset = [0, -350];
+
+				playAnim('idle');
+
+				nativelyPlayable = true;
+			case 'godshaggy':
+				frames = Paths.getSparrowAtlas('characters/shaggy_god', 'shared');
+				animation.addByPrefix('idle', 'pshaggy_idle', 30, false);
+				animation.addByPrefix('singUP', 'pshaggy_up', 30, false);
+				animation.addByPrefix('singLEFT', 'pshaggy_right', 30, false);
+				animation.addByPrefix('singRIGHT', 'pshaggy_left', 30, false);
+				animation.addByPrefix('singDOWN', 'pshaggy_down', 30, false);
+
+				barColor = FlxColor.fromRGB(75, 51, 114);
+
+				loadOffsetFile(curCharacter);
+				globalOffset = [30, -400];
+
+				playAnim('idle');
+
+				nativelyPlayable = true;
+			case 'redshaggy':
+				frames = Paths.getSparrowAtlas('characters/shaggy_red', 'shared');
+				animation.addByPrefix('danceRight', 'shaggy_idle0', 30, false);
+				animation.addByPrefix('danceLeft', 'shaggy_idle2', 30, false);
+				animation.addByPrefix('singUP', 'shaggy_up', 30, false);
+				animation.addByPrefix('singLEFT', 'shaggy_right', 30, false);
+				animation.addByPrefix('singRIGHT', 'shaggy_left', 30, false);
+				animation.addByPrefix('singDOWN', 'shaggy_down', 30, false);
+
+				barColor = FlxColor.fromRGB(209, 26, 26);
+
+				loadOffsetFile(curCharacter);
+				globalOffset = [0, -350];
+
+				playAnim('danceRight');
+
+				nativelyPlayable = true;
+			case 'shaggy-lose':
+				frames = Paths.getSparrowAtlas('characters/shaggy_gameover', 'shared');
+
+				animation.addByPrefix('firstDeath', 'shaggy_lose_start', 24, false);
+				animation.addByPrefix('deathLoopRight', 'shaggy_lose_loop1', 24, false);
+				animation.addByPrefix('deathLoopLeft', 'shaggy_lose_loop2', 24, false);
+				animation.addByPrefix('deathConfirm', 'shaggy_lose_retry', 30, false);
+
+				loadOffsetFile(curCharacter);
+				playAnim('firstDeath');
+			case 'redshaggy-lose':
+				frames = Paths.getSparrowAtlas('characters/shaggy_red_gameover', 'shared');
+
+				animation.addByPrefix('firstDeath', 'shaggy_lose_start', 24, false);
+				animation.addByPrefix('deathLoopRight', 'shaggy_lose_loop1', 24, false);
+				animation.addByPrefix('deathLoopLeft', 'shaggy_lose_loop2', 24, false);
+				animation.addByPrefix('deathConfirm', 'shaggy_lose_retry', 30, false);
+
+				loadOffsetFile(curCharacter);
+				playAnim('firstDeath');
 		}
 		dance();
 
