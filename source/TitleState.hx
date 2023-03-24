@@ -153,6 +153,8 @@ class TitleState extends MusicBeatState
 		{
 			logoBl.frames = Paths.getSparrowAtlas('ui/logoBumpinExpunged');
 			Application.current.window.title = "Friday Night Funkin' | VS. EXPUNGED";
+			FlxG.save.data.modchart = false;
+			FlxG.save.data.botplay = false;
 		}
 		logoBl.antialiasing = true;
 		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
