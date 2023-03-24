@@ -3,7 +3,7 @@ package;
 import Section.SwagSection;
 import haxe.Json;
 import haxe.format.JsonParser;
-import openfl.utils.Assets;
+import lime.utils.Assets;
 
 #if windows
 import lime.app.Application;
@@ -18,6 +18,7 @@ typedef SwagSong =
 	var bpm:Float;
 	var needsVoices:Bool;
 	var speed:Float;
+	var mania:Int;
 
 	var player1:String;
 	var player2:String;
@@ -34,6 +35,7 @@ class Song
 	public var bpm:Int;
 	public var needsVoices:Bool = true;
 	public var speed:Float = 1;
+	public var mania:Int = 0;
 
 	public var player1:String = 'bf';
 	public var player2:String = 'dad';
