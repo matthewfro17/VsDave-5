@@ -111,7 +111,13 @@ class CharacterSelectState extends MusicBeatState
 		]),
 		new CharacterInSelect('bambi-3d', [0, 3, 0, 0], [
 			new CharacterForm('bambi-3d', 'Expunged', [0, 3, 0, 0], '3D'),
-		])
+		]),
+		new CharacterInSelect('shaggy', [1, 1, 1, 1], [
+			new CharacterForm('shaggy', 'Shaggy', [1, 1, 1, 1]),
+			new CharacterForm('supershaggy', 'Shaggy (0.001%)', [1, 1, 1, 1]),
+			new CharacterForm('godshaggy', 'Shaggy (0.002%)', [1, 1, 1, 1]),
+			new CharacterForm('redshaggy', 'Red Shaggy', [1, 1, 1, 1]),
+		]),
 	];
 	#if SHADERS_ENABLED
 	var bgShader:Shaders.GlitchEffect;
@@ -123,6 +129,9 @@ class CharacterSelectState extends MusicBeatState
 	
 	override public function create():Void 
 	{
+		unlockCharacter('shaggy');
+		if (PlayState.SONG.song.toLowerCase() == 'exploitation' && !FlxG.save.data.modchart)
+
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
 
