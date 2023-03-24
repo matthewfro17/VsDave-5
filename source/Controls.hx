@@ -1200,16 +1200,6 @@ class Controls extends FlxActionSet
 	}
 	#end
 
-	#if mobile
-	public var trackedinputs:Array<FlxActionInput> = [];
-	
-	public function addbutton(action:FlxActionDigital, button:FlxButton, state:FlxInputState)
-	{
-		var input:FlxActionInputDigitalIFlxInput = new FlxActionInputDigitalIFlxInput(button, state);
-		trackedinputs.push(input);
-		action.add(input);
-	}
-
 	override function update()
 	{
 		super.update();
