@@ -381,36 +381,20 @@ class TerminalState extends MusicBeatState
 
     override function update(elapsed:Float):Void
     {
-		super.update(elapsed);
+        super.update(elapsed);
         
-		if (expungedActivated)
+        if (expungedActivated)
+        {
+            curExpungedAlpha = Math.min(curExpungedAlpha + elapsed, 1);
+            if (fakeDisplayGroup.exists && fakeDisplayGroup != null)
+            {
+                for (text in fakeDisplayGroup.members)
                 {
-			curExpungedAlpha = Math.min(curExpungedAlpha + elapsed, 1);
-                        if (fakeDisplayGroup.exists && fakeDisplayGroup != null)
-                        {
-				for (text in fakeDisplayGroup.members)
-                                {                    
-					text.alpha = curExpungedAlpha;
-				}
-			}
-			return;
-		}
-
-		#if android
-		for (touch in FlxG.touches.list)
-		{
-			if (touch.overlaps(displayText) && touch.justPressed)
-				FlxG.stage.window.textInputEnabled = true;
-		}
-		#end
-
-		if (FlxG.keys.justPressed.ESCAPE #if android || (FlxG.android.justReleased.BACK && !FlxG.stage.window.textInputEnabled) #end)
-		{
-			Main.fps.visible = !FlxG.save.data.disableFps;
-			FlxG.switchState(new MainMenuState());
-		}
-	}
-
+                    text.alpha = curExpungedAlpha;
+                }
+            }
+            return;
+        }
         var keyJustPressed:FlxKey = cast(FlxG.keys.firstJustPressed(), FlxKey);
 
         if (keyJustPressed == FlxKey.ENTER)
